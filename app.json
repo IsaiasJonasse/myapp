@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "SoilBot Operator",
+    "slug": "soilbot-operator",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "soilbot",
+    "ios": {
+      "bundleIdentifier": "com.soilbot.operator",
+      "buildNumber": "1",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "SoilBot connects to the field robot over your local network using rosbridge.",
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        }
+      }
+    },
+    "android": {
+      "package": "com.soilbot.operator",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#183F32",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "INTERNET"
+      ]
+    },
+    "plugins": [
+      "expo-sqlite",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "name": "SoilBot Operator",
+      "shortName": "SoilBot",
+      "description": "Field mapping and live telemetry for the SoilBot plantation robot.",
+      "display": "standalone",
+      "themeColor": "#183F32",
+      "backgroundColor": "#F4F5EF",
+      "lang": "en",
+      "favicon": "./assets/icon.png"
+    }
+  }
+}

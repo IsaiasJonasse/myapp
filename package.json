@@ -1,0 +1,36 @@
+{
+  "name": "soilbot-operator",
+  "description": "Cross-platform field mapping and telemetry console for the SoilBot plantation robot.",
+  "license": "0BSD",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@expo/metro-runtime": "~57.0.16",
+    "expo": "~57.0.25",
+    "expo-build-properties": "~57.0.22",
+    "expo-sqlite": "~57.0.3",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-dom": "^19.2.3",
+    "react-native": "0.86.3",
+    "react-native-web": "^0.21.2"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Start-SoilBot.ps1",
+    "android": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Start-SoilBot.ps1 -Android",
+    "ios": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Start-SoilBot.ps1 -IOS",
+    "desktop": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Start-SoilBot.ps1 -Web",
+    "web": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Start-SoilBot.ps1 -Web",
+    "build:web": "expo export --platform web",
+    "build:web:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Start-SoilBot.ps1 -ExportWeb",
+    "build:android:preview": "npx eas-cli@latest build --platform android --profile preview",
+    "build:android:production": "npx eas-cli@latest build --platform android --profile production",
+    "build:ios:production": "npx eas-cli@latest build --platform ios --profile production",
+    "typecheck": "tsc --noEmit",
+    "doctor": "npx --yes expo-doctor"
+  }
+}
